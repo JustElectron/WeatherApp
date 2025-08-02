@@ -8,13 +8,13 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add source files
-add_executable(WeatherApp src/main.cpp)
+add_executable(WeatherApp src/main.cpp src/httpclient.cpp src/weatherapi.cpp src/weatherdata.cpp)
 
 # Include directories
 target_include_directories(WeatherApp PRIVATE include)
 
-# Add third-party libraries (example: HTTP client)
+# Add third-party libraries
 add_subdirectory(3rdparty)
 
-# Link third-party libraries (example: libcurl)
-# target_link_libraries(WeatherApp PRIVATE curl)
+# Link restclient-cpp
+target_link_libraries(WeatherApp PRIVATE restclient-cpp nlohmann_json::nlohmann_json)
