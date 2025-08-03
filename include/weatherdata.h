@@ -81,3 +81,5 @@ struct WeatherData {
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(WeatherData, request, location, current)
 };
+
+extern std::string mockJsonWeatherData; // Declare the variable as extern
